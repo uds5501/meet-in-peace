@@ -95,3 +95,7 @@ gmeet_badge.addEventListener('change', function() {
   chrome.storage.sync.set({gmeet_badge: this.checked});
   refreshScript();
 });
+gmeet_video.addEventListener('change', function() {
+  chrome.storage.sync.set({gmeet_video: this.checked});
+  refreshScript();
+});

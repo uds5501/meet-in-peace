@@ -13,7 +13,9 @@
       "popup/popup.css",
       "css/gmeet_messages.css",
       "css/gmeet_badge.css",
-      "css/gmeet_participants.css"
+      "css/gmeet_participants.css",
+      "css/gmeet_entry.css",
+      "css/gmeet_video.css"
     ],
     "content_scripts": [
      {
