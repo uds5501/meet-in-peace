@@ -3,10 +3,17 @@ body{
   font-family: 'Courier New', Courier, monospace;
   width: 400px;
 }
-h2{
+.header h2{
   /* color: #232323; */
   color: #25d366;
   font-size:2em;
+  display: inline;
+  margin: 5px;
+}
+.header h6 {
+  color: #25d366;
+  font-size: 0.5rem;
+  display: inline;
 }
 .warpper{
   display:flex;

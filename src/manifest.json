@@ -15,12 +15,21 @@
       "css/gmeet_badge.css",
       "css/gmeet_participants.css",
       "css/gmeet_entry.css",
-      "css/gmeet_video.css"
+      "css/gmeet_video.css",
+      "css/zoom_messages.css",
+      "css/zoom_badge.css",
+      "css/zoom_participants.css",
+      "css/zoom_entry.css",
+      "css/zoom_video.css"
     ],
     "content_scripts": [
      {
        "matches": ["https://meet.google.com/*"],
        "js": ["loadMeet.js"]
+     },
+     {
+      "matches": ["https://zoom.us/*"],
+      "js": ["loadZoom.js"]
      }
     ],
     "browser_action": {

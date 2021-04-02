@@ -1,0 +1,13 @@
+.gallery-video-container__main-view,
+.video-avatar__avatar
+{
+    filter: blur(50px) grayscale(1);
+    transition-delay: 0s;
+}
+
+.gallery-video-container__main-view:hover,
+.video-avatar__avatar:hover
+{
+    filter: blur(0) grayscale(0);
+    transition-delay: 0.3s;
+}

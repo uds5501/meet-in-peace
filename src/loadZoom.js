@@ -1,18 +1,18 @@
 chrome.storage.sync.get([
     'mainButton',
-    'gmeet_messages',
-    'gmeet_participants',
-    'gmeet_video',
-    'gmeet_badge',
-    'gmeet_entry',
+    'zoom_messages',
+    'zoom_participants',
+    'zoom_video',
+    // 'zoom_entry',
+    'zoom_badge'
 ], function (data) {
     const { 
         mainButton,
-        gmeet_messages,
-        gmeet_participants,
-        gmeet_video,
-        gmeet_entry,
-        gmeet_badge
+        zoom_messages,
+        zoom_participants,
+        zoom_video,
+        // zoom_entry,
+        zoom_badge
     } = data;
     function removeStyleById(id) {
         console.log(`removing style: ${id}`)
@@ -38,11 +38,11 @@ chrome.storage.sync.get([
 
     if (mainButton) {
         // add stylesheets if selected otherwise remove it
-        if (gmeet_messages) addStyle('gmeet_messages'); else removeStyleById('gmeet_messages');
-        if (gmeet_participants) addStyle('gmeet_participants'); else removeStyleById('gmeet_participants');
-        if (gmeet_video) addStyle('gmeet_video'); else removeStyleById('gmeet_video');
-        if (gmeet_entry) addStyle('gmeet_entry'); else removeStyleById('gmeet_entry');
-        if (gmeet_badge) addStyle('gmeet_badge'); else removeStyleById('gmeet_badge');
+        if (zoom_messages) addStyle('zoom_messages'); else removeStyleById('zoom_messages');
+        if (zoom_participants) addStyle('zoom_participants'); else removeStyleById('zoom_participants');
+        if (zoom_video) addStyle('zoom_video'); else removeStyleById('zoom_video');
+        // if (zoom_entry) addStyle('zoom_entry'); else removeStyleById('zoom_entry');
+        if (zoom_badge) addStyle('zoom_badge'); else removeStyleById('zoom_badge');
     } else if (document.getElementsByClassName('mip').length > 0) {
         // remove all stylesheets
         var el = document.getElementsByClassName('mip');
