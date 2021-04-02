@@ -3,6 +3,7 @@ chrome.storage.sync.get([
     'gmeet_messages',
     'gmeet_participants',
     'gmeet_video',
+    'gmeet_badge',
     'gmeet_entry',
     'zoom_messages',
     'zoom_participants',
@@ -11,6 +12,7 @@ chrome.storage.sync.get([
     'general_messages',
 ], function (data) {
     function removeStyleById(id) {
+        console.log(`removing style: ${id}`)
         // check if the stylesheet is there before removing
         if (el = document.getElementById(id)) {
             el.parentNode.removeChild(el);
@@ -37,14 +39,10 @@ chrome.storage.sync.get([
         if (data.gmeet_participants) addStyle('gmeet_participants'); else removeStyleById('gmeet_participants');
         if (data.gmeet_video) addStyle('gmeet_video'); else removeStyleById('gmeet_video');
         if (data.gmeet_entry) addStyle('gmeet_entry'); else removeStyleById('gmeet_entry');
-        if (data.zoom_messages) addStyle('zoom_messages'); else removeStyleById('zoom_messages');
-        if (data.zoom_participants) addStyle('zoom_participants'); else removeStyleById('zoom_participants');
-        if (data.zoom_video) addStyle('zoom_video'); else removeStyleById('zoom_video');
-        if (data.zoom_entry) addStyle('zoom_entry'); else removeStyleById('zoom_entry');
-        if (data.general_messages) addStyle('general_messages'); else removeStyleById('general_messages');
-    } else if (document.getElementsByClassName('pfwa').length > 0) {
+        if (data.gmeet_badge) addStyle('gmeet_badge'); else removeStyleById('gmeet_badge');
+    } else if (document.getElementsByClassName('mip').length > 0) {
         // remove all stylesheets
-        var el = document.getElementsByClassName('pfwa');
+        var el = document.getElementsByClassName('mip');
         while (el.length > 0) {
             el[0].parentNode.removeChild(el[0]);
         }

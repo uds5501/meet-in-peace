@@ -36,6 +36,7 @@ chrome.storage.sync.get([
     'zoom_video',
     'zoom_entry',
     'general_messages',
+    'gmeet_badge'
   ], function(data) {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       mainButton.checked=data.mainButton;
@@ -48,6 +49,7 @@ chrome.storage.sync.get([
       zoom_video.checked=data.zoom_video;
       zoom_entry.checked=data.zoom_entry;
       general_messages.checked=data.general_messages;
+      gmeet_badge.checked=data.gmeet_badge;
     });
 });
 
@@ -87,5 +89,13 @@ zoom_entry.addEventListener('change', function() {
 });
 general_messages.addEventListener('change', function() {
   chrome.storage.sync.set({general_messages: this.checked});
+  refreshScript();
+});
+gmeet_badge.addEventListener('change', function() {
+  chrome.storage.sync.set({gmeet_badge: this.checked});
+  refreshScript();
+});
+gmeet_video.addEventListener('change', function() {
+  chrome.storage.sync.set({gmeet_video: this.checked});
   refreshScript();
 });
