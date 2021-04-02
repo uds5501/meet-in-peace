@@ -26,7 +26,8 @@ Now, you can't really change people can you?
 **But you can definitely change your meeting** ❤️
 
 ## The solution 👩‍🏫
-**MeetInPeace**, A browser extension which blurs out sensitive information zones in the video calling webapps and reveals them on hovering.(see? simple!)
+**MeetInPeace**, A browser extension which blurs out sensitive information zones in the video calling webapps and reveals them on hovering. see? simple!
+
 ![MeetInPeace](screenshots/mipv1.png)
 
 ## How to setup? ⚙️
