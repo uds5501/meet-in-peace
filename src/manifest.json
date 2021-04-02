@@ -1,0 +1,45 @@
+{
+    "name": "Meet in Peace",
+    "version": "0.1.1",
+    "description": "Blurs your video calls and messages in public.",
+    "permissions": ["storage", "<all_urls>", "https://*/"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "web_accessible_resources": [
+      "images/statusOn.png",
+      "images/statusOff.png",
+      "css/messages.css",
+      "css/messagesPreview.css",
+      "css/mediaPreview.css",
+      "css/mediaGallery.css",
+      "css/textInput.css",
+      "css/profilePic.css",
+      "css/name.css",
+      "css/noDelay.css",
+      "css/unblurActive.css",
+      "popup/popup.css",
+      "css/gmeet_messages.css"
+    ],
+    "content_scripts": [
+     {
+       "matches": ["https://meet.google.com/*"],
+       "js": ["loadMeet.js"]
+     }
+    ],
+    "browser_action": {
+     "default_title": "Anti Snooping extension for your video calls",
+     "default_popup": "popup/popup.html"
+    },
+    "commands": {
+      "toggle": {
+        "suggested_key": {
+          "default": "Alt+X"
+        },
+        "description": "Toggle On/Off"
+      }
+    },
+    "manifest_version": 2
+  }
+  

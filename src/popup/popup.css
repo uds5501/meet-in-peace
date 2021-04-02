@@ -1,0 +1,114 @@
+body{
+  background:#232323;
+  font-family: 'Courier New', Courier, monospace;
+  width: 400px;
+}
+h2{
+  /* color: #232323; */
+  color: #25d366;
+  font-size:2em;
+}
+.warpper{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tab{
+  cursor: pointer;
+  padding:10px 20px;
+  margin:0px 2px;
+  background:#000;
+  display:inline-block;
+  color:#25d366;
+  border-radius:3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+.panels{
+  background:#fffffff6;
+  box-shadow: 0 2rem 2rem #00000080;
+  min-height:200px;
+  width:100%;
+  max-width:500px;
+  border-radius:3px;
+  overflow:hidden;
+  padding:20px;  
+}
+.panel{
+  display:none;
+  animation: fadein .8s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+.panel-title{
+  font-size:1.5em;
+  font-weight:bold
+}
+.radio{
+  display:none;
+}
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel{
+  display:block
+}
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab{
+  background:#fffffff6;
+  color:#000;
+  border-top: 3px solid #000;
+}
+
+input[type="checkbox"]{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  position: absolute;
+}
+.l2 {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 40px;
+  height: 20px;
+  background: #cacaca;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  top: -2px;
+  float: right;
+}
+.l2:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+input[type="checkbox"]:checked + .l2 {
+  /* background: #25d366; */
+  background: #25d366;
+}
+input[type="checkbox"]:checked + .l2:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+.l2:active:after {
+  width: 10px;
+}
+.main_toggle {
+  align-items: center;
+  margin-left: 70px;
+  margin-right: 70px;
+  color: #25d366;
+  font-size:1.8em;
+}
