@@ -1,0 +1,13 @@
+.chat-message-text-content,
+.chat-item__chat-info-msg-avatar-container
+{
+  filter: blur(8px) grayscale(1);
+  transition-delay: 0s;
+}
+
+.chat-message-text-content:hover,
+.chat-item__chat-info-msg-avatar-container:hover
+{
+  filter: blur(0) grayscale(0);
+  transition-delay: 0.3s;
+}

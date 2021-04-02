@@ -16,28 +16,43 @@ let version = chrome.runtime.getManifest().version;
 document.getElementById('version').innerText = version;
 
 // Add or remove stylesheets
-function refreshScript(){
+function refreshScript(url, file){
   console.log("Trying to refresh...")
-  chrome.tabs.query({url: "https://meet.google.com/*"}, function(tabs) {
+  chrome.tabs.query({url}, function(tabs) {
     if (tabs.length !== 0)
-      tabs.forEach(function(tab){chrome.tabs.executeScript(tab.id, {file: '/loadMeet.js'})});
+      tabs.forEach(function(tab){chrome.tabs.executeScript(tab.id, {file})});
   });
 }
 
+const buttonNames = [
+  'mainButton',
+  'gmeet_messages',
+  'gmeet_participants',
+  'gmeet_video',
+  'gmeet_entry',
+  'zoom_messages',
+  'zoom_participants',
+  'zoom_video',
+  // 'zoom_entry',
+  'general_messages',
+  'gmeet_badge'
+];
+const gmeet_url = "https://meet.google.com/*";
+const loadMeet_url = "/loadMeet.js";
+
+const zoom_url = "https://zoom.us/*";
+const loadZoom_url = "/loadZoom.js";
+
+const refreshMeet = () => {
+  refreshScript(gmeet_url, loadMeet_url);
+}
+
+const refreshZoom = () => {
+  refreshScript(zoom_url, loadZoom_url);
+}
+
 // Set current state in popup
-chrome.storage.sync.get([
-    'mainButton',
-    'gmeet_messages',
-    'gmeet_participants',
-    'gmeet_video',
-    'gmeet_entry',
-    'zoom_messages',
-    'zoom_participants',
-    'zoom_video',
-    'zoom_entry',
-    'general_messages',
-    'gmeet_badge'
-  ], function(data) {
+chrome.storage.sync.get(buttonNames, function(data) {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       mainButton.checked=data.mainButton;
       gmeet_messages.checked=data.gmeet_messages;
@@ -47,7 +62,7 @@ chrome.storage.sync.get([
       zoom_messages.checked=data.zoom_messages;
       zoom_participants.checked=data.zoom_participants;
       zoom_video.checked=data.zoom_video;
-      zoom_entry.checked=data.zoom_entry;
+      // zoom_entry.checked=data.zoom_entry;
       general_messages.checked=data.general_messages;
       gmeet_badge.checked=data.gmeet_badge;
     });
@@ -56,46 +71,50 @@ chrome.storage.sync.get([
 mainButton.addEventListener('change', function() {
   console.log("We changing?");
   chrome.storage.sync.set({mainButton: this.checked});
-  refreshScript();
+  refreshMeet();
+  refreshZoom();
 });
 // Update settings values
 gmeet_messages.addEventListener('change', function() {
   chrome.storage.sync.set({gmeet_messages: this.checked});
-  refreshScript();
+  refreshMeet();
 });
 gmeet_participants.addEventListener('change', function() {
   chrome.storage.sync.set({gmeet_participants: this.checked});
-  refreshScript();
+  refreshMeet();
 });
 gmeet_entry.addEventListener('change', function() {
   chrome.storage.sync.set({gmeet_entry: this.checked});
-  refreshScript();
-});
-zoom_messages.addEventListener('change', function() {
-  chrome.storage.sync.set({zoom_messages: this.checked});
-  refreshScript();
-});
-zoom_participants.addEventListener('change', function() {
-  chrome.storage.sync.set({zoom_participants: this.checked});
-  refreshScript();
-});
-zoom_video.addEventListener('change', function() {
-  chrome.storage.sync.set({zoom_video: this.checked});
-  refreshScript();
-});
-zoom_entry.addEventListener('change', function() {
-  chrome.storage.sync.set({zoom_entry: this.checked});
-  refreshScript();
-});
-general_messages.addEventListener('change', function() {
-  chrome.storage.sync.set({general_messages: this.checked});
-  refreshScript();
+  refreshMeet();
 });
 gmeet_badge.addEventListener('change', function() {
   chrome.storage.sync.set({gmeet_badge: this.checked});
-  refreshScript();
+  refreshMeet();
 });
 gmeet_video.addEventListener('change', function() {
   chrome.storage.sync.set({gmeet_video: this.checked});
-  refreshScript();
+  refreshMeet();
 });
+
+zoom_messages.addEventListener('change', function() {
+  chrome.storage.sync.set({zoom_messages: this.checked});
+  refreshZoom();
+});
+zoom_participants.addEventListener('change', function() {
+  chrome.storage.sync.set({zoom_participants: this.checked});
+  refreshZoom();
+});
+zoom_video.addEventListener('change', function() {
+  chrome.storage.sync.set({zoom_video: this.checked});
+  refreshZoom();
+});
+// zoom_entry.addEventListener('change', function() {
+//   chrome.storage.sync.set({zoom_entry: this.checked});
+//   refreshZoom();
+// });
+
+// Later
+// general_messages.addEventListener('change', function() {
+//   chrome.storage.sync.set({general_messages: this.checked});
+//   refreshScript();
+// });
