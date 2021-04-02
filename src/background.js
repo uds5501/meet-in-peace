@@ -10,6 +10,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
         'zoom_video',
         'zoom_entry',
         'general_messages',
+        'gmeet_badge',
     ], function (data) {
         data.mainButton == null && chrome.storage.sync.set({ mainButton: true });
         data.gmeet_messages == null && chrome.storage.sync.set({ gmeet_messages: true });
@@ -20,6 +21,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
         data.zoom_video == null && chrome.storage.sync.set({ zoom_video: false });
         data.zoom_entry == null && chrome.storage.sync.set({ zoom_entry: false });
         data.general_messages == null && chrome.storage.sync.set({ general_messages: false });
+        data.gmeet_badge == null && chrome.storage.sync.set({ gmeet_badge: false });
     });
 });
 

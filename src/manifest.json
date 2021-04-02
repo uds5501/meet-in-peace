@@ -10,17 +10,10 @@
     "web_accessible_resources": [
       "images/statusOn.png",
       "images/statusOff.png",
-      "css/messages.css",
-      "css/messagesPreview.css",
-      "css/mediaPreview.css",
-      "css/mediaGallery.css",
-      "css/textInput.css",
-      "css/profilePic.css",
-      "css/name.css",
-      "css/noDelay.css",
-      "css/unblurActive.css",
       "popup/popup.css",
-      "css/gmeet_messages.css"
+      "css/gmeet_messages.css",
+      "css/gmeet_badge.css",
+      "css/gmeet_participants.css"
     ],
     "content_scripts": [
      {

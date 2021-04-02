@@ -1,1 +1,15 @@
 .oIy2qc/* normal message */,
+.YTbUzc /* Name of messenger */,
+.MuzmKe /* time of message */
+{
+  filter: blur(8px) grayscale(1);
+  transition-delay: 0s;
+}
+
+.oIy2qc:hover/* normal message */,
+.YTbUzc:hover /* Name of messenger */,
+.MuzmKe:hover /* time of message */
+{
+  filter: blur(0) grayscale(0);
+  transition-delay: 0.3s;
+}

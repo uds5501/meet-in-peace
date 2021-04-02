@@ -1,0 +1,11 @@
+.ADivge
+{
+    filter: blur(20px) grayscale(1);
+    transition-delay: 0s;
+}
+
+.ADivge:hover
+{
+    filter: blur(0) grayscale(0);
+    transition-delay: 0.3s;
+}
