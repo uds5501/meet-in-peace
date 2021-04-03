@@ -20,7 +20,12 @@
       "css/zoom_badge.css",
       "css/zoom_participants.css",
       "css/zoom_entry.css",
-      "css/zoom_video.css"
+      "css/zoom_video.css",
+      "css/slack_messages.css",
+      "css/slack_sidebar.css",
+      "css/slack_members.css",
+      "css/slack_workspace.css",
+      "css/slack_userProfile.css"
     ],
     "content_scripts": [
      {
@@ -30,6 +35,10 @@
      {
       "matches": ["https://zoom.us/*"],
       "js": ["loadZoom.js"]
+     },
+     {
+      "matches": ["https://app.slack.com/*"],
+      "js": ["loadSlack.js"]
      }
     ],
     "browser_action": {

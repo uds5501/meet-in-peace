@@ -1,0 +1,13 @@
+.p-ia__sidebar_header__team_name_text,
+.p-top_nav__search__text
+{
+    filter: blur(8px) grayscale(1);
+    transition-delay: 0s;
+}
+
+.p-ia__sidebar_header__team_name_text:hover,
+.p-top_nav__search__text:hover
+{
+    filter: blur(0) grayscale(0);
+    transition-delay: 0.3s;
+}

@@ -1,0 +1,15 @@
+.c-message_kit__gutter__left, /* user avatar */
+.c-message_kit__gutter__right,
+.c-message_list__day_divider__label__pill
+{
+  filter: blur(8px) grayscale(1);
+  transition-delay: 0s;
+}
+
+.c-message_kit__gutter__left:hover,
+.c-message_kit__gutter__right:hover,
+.c-message_list__day_divider__label__pill:hover
+{
+  filter: blur(0) grayscale(0);
+  transition-delay: 0.3s;
+}
