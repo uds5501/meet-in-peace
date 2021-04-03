@@ -54,7 +54,7 @@ const buttonNames = [
 const gmeet_url = "https://meet.google.com/*";
 const loadMeet_url = "/loadMeet.js";
 
-const zoom_url = "https://zoom.us/*";
+const zoom_url = "https://*.zoom.us/*";
 const loadZoom_url = "/loadZoom.js";
 
 const slack_url = "https://app.slack.com/*";

@@ -33,7 +33,7 @@
        "js": ["loadMeet.js"]
      },
      {
-      "matches": ["https://zoom.us/*"],
+      "matches": ["https://*.zoom.us/*"],
       "js": ["loadZoom.js"]
      },
      {
