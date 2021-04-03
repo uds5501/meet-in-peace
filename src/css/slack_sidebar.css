@@ -1,0 +1,21 @@
+.p-channel_sidebar__name,
+.p-channel_sidebar__section_heading_label_overflow,
+.p-channel_sidebar__link__icon,
+.p-channel_sidebar__user_avatar,
+.p-ia__view_header__title_and_channel_section,
+.c-inline_channel_entity__content
+{
+    filter: blur(8px) grayscale(1);
+    transition-delay: 0s;
+  }
+
+.p-channel_sidebar__name:hover,
+.p-channel_sidebar__section_heading_label_overflow:hover,
+.p-channel_sidebar__link__icon:hover,
+.p-channel_sidebar__user_avatar:hover,
+.p-ia__view_header__title_and_channel_section:hover,
+.c-inline_channel_entity__content:hover
+{
+    filter: blur(0) grayscale(0);
+    transition-delay: 0.3s;
+}
